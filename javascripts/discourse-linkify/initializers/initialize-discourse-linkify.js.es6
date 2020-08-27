@@ -10,6 +10,7 @@ export default {
       let skipTags = {
         'a': 1,
         'iframe': 1,
+        'img': 1,
       };
   
       settings.excluded_tags.split('|').forEach(tag => {
@@ -29,14 +30,22 @@ export default {
       });
       
       let createLink = function(text, url) {
-        var link = document.createElement('a');
-        link.innerHTML = text;
-        link.href = url;
-        link.rel = 'nofollow';
-        link.target = '_blank';
-        link.className = 'linkify-word no-track-link';
+        var link = document.createElement('img'); 
+        
+        img.src = url;
+//         document.getElementById('body').appendChild(img); 
+     
+        img.className = 'linkify-word no-track-link';
         return link;
       };
+      
+      //      function GFG_Fun() { 
+     //     var img = document.createElement('img'); 
+       //     img.src =  
+//'https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png'; 
+  //          document.getElementById('body').appendChild(img); 
+    //        down.innerHTML = "Image Element Added.";  
+      //  }  
 
       let Action = function(inputListName, method) {
         this.inputListName = inputListName;
